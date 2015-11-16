@@ -1,0 +1,77 @@
+{{? !it}}
+<div class="sk-three-bounce">
+    <div class="sk-child sk-bounce1"></div>
+    <div class="sk-child sk-bounce2"></div>
+    <div class="sk-child sk-bounce3"></div>
+</div>
+{{??}}
+<header>
+    <a class="back" href="#reward"><span class="iconfont icon-iconfont12"></span></a>
+    <h1>提现记录</h1>
+</header>
+{{ for (var key in it.data) { }}
+<div class="za-media">
+    <div class="za-media-left">
+        {{?it.data[key].type == parseInt(1)}}
+        <b>积分提现</b>
+        {{??it.data[key].type == parseInt(2)}}
+        <b>现金</b>
+        {{?}}
+    </div>
+    <div class="za-media-body">
+        <span class="text-danger">
+            ￥{{=it.data[key].cash}}
+        </span>
+    </div>
+    <div class="za-media-right">
+        {{?it.data[key].status == 1}}
+        <span class="text-success">提现成功</span>
+        {{??it.data[key].status == 0}}
+        <span class="text-danger">提现失败</span>
+        {{??it.data[key].status == 2}}
+        <span class="text-info">审核中...</span>
+        {{?}}
+        <br>
+        {{=it.data[key].time}}
+
+    </div>
+</div>
+{{ } }}
+{{? it.total_count > it.list_rows }}
+<div class="text-center">
+    <ul class="za-page">
+        <li>
+            <a   {{? it.current_page == 1}}
+                 href="javascript:;"
+                 class="disabled"
+                 {{??}}
+                 href="#withdraw_list/{{=(parseInt(it.current_page) - 1)}}"
+                 {{?}} aria-label="Previous">
+                <span aria-hidden="true">«</span>
+            </a>
+        </li>
+        {{var num = (it.total_pages < 5) ? it.total_pages : 5  ; }}
+        {{ for (var i=0; i < num; i++ ) { }}
+        {{? (parseInt(it.current_page) + i) <= it.total_pages}}
+        <li>
+            <a class="{{? it.current_page == (parseInt(it.current_page) + i) }}active{{ } }}" href="#withdraw_list/{{=(parseInt(it.current_page) + i)}}">
+                {{=(parseInt(it.current_page) + i)}}
+            </a>
+        </li>
+        {{?}}
+        {{ } }}
+        <li>
+            <a {{? it.total_pages == it.current_page}}
+               href="javascript:;"
+               class="disabled"
+               {{??}}
+               href="#withdraw_list/{{=(parseInt(it.current_page) + 1)}}"
+               {{?}}
+               aria-label="Next">
+                <span aria-hidden="true">»</span>
+            </a>
+        </li>
+    </ul>
+</div>
+{{ } }}
+{{ } }}

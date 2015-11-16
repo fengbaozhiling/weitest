@@ -1,0 +1,64 @@
+#placardView {
+  .img-placard {
+    .inner {
+      position: absolute;
+      display: block;
+      padding: 0.2rem 2rem 0;
+      .text {
+        &:extend(.animated,.animated.infinite,.pulse);
+      }
+    }
+  }
+  padding-bottom: 4rem;
+
+  .icon-wenhao {
+    background: #efefef;
+    color: #333;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    text-align: center;
+    border-radius: 1.6rem;
+    line-height: 1.6rem;
+    font-size: 1.4rem;
+  }
+  .footer-line {
+    padding: 1rem;
+    line-height: 2rem;
+    z-index: @zindex-navbar-fixed;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #efefef;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .za-media {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #efefef;
+    border-top: 1px solid #efefef;
+    margin-top: -1px;
+    > .za-media-left {
+      > .media-object {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 4rem;
+      }
+    }
+    .za-media-right {
+      width: 20%;
+    }
+    .time-info {
+      color: #999;
+    }
+  }
+  .za-nav {
+    > a {
+      width: 50%;
+      margin-left: auto;
+      &:after {
+        background: #efefef;
+      }
+    }
+  }
+}

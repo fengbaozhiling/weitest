@@ -1,0 +1,29 @@
+<div class="za-container">
+    {{? !it}}
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+    {{??}}
+        {{ for (var key in it) { }}
+        <div class="za-media">
+            <div class="za-media-left">
+                <img class="media-object"
+                     src="{{=it[key].headimgurl}}">
+            </div>
+            <div class="za-media-body">
+                <b>{{=it[key].nickname}}</b>
+                <P>{{=it[key].desc}}</P>
+            </div>
+            <div class="za-media-right">
+                <img style="display: none" src="{{=it[key].qrcode}}">
+                <button data-uid="{{=it[key].id}}" data-qcode="{{=it[key].qrcode}}"
+                        class="za-btn za-btn-success add-friend">加好友
+                </button>
+            </div>
+        </div>
+        {{ } }}
+    {{ } }}
+
+</div>

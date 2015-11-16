@@ -1,0 +1,29 @@
+<div class="za-container">
+    {{? !it}}
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+    {{??}}
+    {{ for (var key in it.data) { }}
+    <div class="za-media">
+        <div class="za-media-left">
+            <img class="media-object"
+                 src="{{=it.data[key].headimgurl}}">
+        </div>
+        <div class="za-media-body">
+            <b>{{=it.data[key].name}}</b>
+            <P>{{=it.data[key].desc}}</P>
+        </div>
+        <div class="za-media-right">
+            <img style="display: none" src="{{=it.data[key].qrcode}}">
+            <button data-uid="{{=it.data[key].id}}" data-qcode="{{=it.data[key].qrcode}}"
+                    class="za-btn za-btn-success add-friend">进入
+            </button>
+        </div>
+    </div>
+    {{ } }}
+    {{ } }}
+<div id="testcontent"></div>
+</div>

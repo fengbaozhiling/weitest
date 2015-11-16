@@ -1,0 +1,31 @@
+{{? !it}}
+<div class="sk-three-bounce">
+    <div class="sk-child sk-bounce1"></div>
+    <div class="sk-child sk-bounce2"></div>
+    <div class="sk-child sk-bounce3"></div>
+</div>
+{{??}}
+<form class="form-group">
+    <div id="withdrawWay" class="input-group">
+        <div class="form-body">
+            微信钱包
+        </div>
+        <div class="arrow"><i class="iconfont icon-qianjin"></i></div>
+    </div>
+    <div class="form-tip">
+        {{? it.type===1}}
+        当前可提现积分<span class="text-danger">{{= it.integral}}</span>（100积分=1元）
+        {{?}}
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">金额</span>
+        <input name="cash" class="form-control" placeholder="请填写金额（元）" type="num" value=""/>
+    </div>
+    <div class="form-tip">
+        最低限度1元，每日限额200元
+    </div>
+</form>
+<div class="za-container">
+    <button class="za-btn za-btn-info za-btn-block">申请提现</button>
+</div>
+{{ } }}

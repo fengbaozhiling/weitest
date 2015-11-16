@@ -1,0 +1,24 @@
+<div class="za-container">
+    <form id="upload_form" onSubmit="return false;">
+        <div class="form-group">
+            <div class="input-group">
+                <h4>二维码</h4>
+                <div class="row">
+                    {{ for ( var i in it.qrcode) { }}
+                    <div class="col-xs-6">
+                        <label for="qrcode_{{=i}}}"><img class="img-responsive" src="{{= it.qrcode[i]}}">
+                            <input {{? i== 1 }} checked="checked" {{?}} name="qrcode" id="qrcode_{{=i}}}" value="{{= i }}" type="radio">&nbsp;使用此图作为二维码</label>
+                    </div>
+                    {{ } }}
+                </div>
+            </div>
+            <div class="input-group">
+                <h4>描述</h4>
+                <textarea name="desc" rows="5" cols="40" class="form-control" placeholder="请填写描述">{{= it.desc}}</textarea>
+            </div>
+            <br>
+            <button class="za-btn za-btn-primary">确定更改</button>
+        </div>
+    </form>
+
+</div>

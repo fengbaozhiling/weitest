@@ -1,0 +1,31 @@
+{{? !it}}
+<div class="sk-three-bounce">
+    <div class="sk-child sk-bounce1"></div>
+    <div class="sk-child sk-bounce2"></div>
+    <div class="sk-child sk-bounce3"></div>
+</div>
+{{??}}
+<nav class="za-nav">
+    <a href="#/placard/myteam"><span>我的团</span></a>
+    <a href="#/placard/all"><span>所有排名</span></a>
+</nav>
+{{ for (var key in it.data) { }}
+<div class="za-media">
+    <div class="za-media-left">
+        <img class="media-object"
+             src="{{=it.data[key].headimgurl}}">
+    </div>
+    <div class="za-media-body">
+        <h4>{{=it.data[key].nickname}}</h4>
+
+        <p class="time-info">入团时间：{{=it.data[key].join_time}}</p>
+    </div>
+    <div class="za-media-right">
+        <div class="text-right text-danger">
+            {{? it.group == 'myteam'}}贡献{{?}}
+        {{=it.data[key].integral}}
+        </div>
+    </div>
+</div>
+{{ } }}
+{{ } }}

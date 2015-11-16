@@ -1,0 +1,147 @@
+#menuView {
+
+}
+.menu-lb {
+  span {
+    display: block;
+
+  }
+  .menu-box {
+    position: absolute;
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    bottom: 0;
+  }
+
+
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    ul {
+
+      transform-origin: 0 0;
+
+      -webkit-transform:rotate(90deg) ;
+      -moz-transform: rotate(90deg);
+      -ms-transform:rotate(90deg) ;
+      -o-transform:rotate(90deg) ;
+      transform: rotate(90deg);
+
+      transition: 1s;
+    }
+  }
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 3rem;
+
+  li  a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+  }
+  li.n-1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    > a {
+      box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+      span {
+        margin-right: 1rem;
+        margin-top:0.2rem;
+        .iconfont {
+          font-size: 2rem;
+        }
+
+      }
+    }
+    &.active {
+      > a {
+        background: #ff8874;
+        color: #fff;
+      }
+      .m-2 {
+        -webkit-transform:rotate(0deg) ;
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        .n-2:nth-of-type(2) {
+          > a {
+            .iconfont {
+              font-size: 2rem;
+            }
+            transform-origin: 0 6rem;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            background: #ffddd7;
+          }
+        }
+
+      }
+
+    }
+    > a {
+
+      display: block;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0 3rem 0 0;
+      position: absolute;
+      bottom: 0;
+      background: #fff;
+      left: 0;
+      z-index: 5;
+      color: #333;
+      line-height: 3rem;
+      text-align: center;
+    }
+
+  }
+  ul.m-2 {
+    li.n-2 {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      > a {
+        box-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+        width: 6rem;
+        height:6rem;
+        border-radius:0 30rem 0 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #ffc9c0;
+        color:#333;
+        text-align: right;
+        > span {
+          .iconfont {
+            font-size: 1.6rem;
+          }
+          margin-top: 3rem;
+          margin-right: 1rem;
+          line-height: 3rem;
+          -webkit-transform:rotate(-12deg);
+          -moz-transform: rotate(-12deg);
+          -ms-transform:rotate(-12deg);
+          -o-transform: rotate(-12deg);
+          transform: rotate(-12deg);
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+<div id="toolDetailView">
+    {{? !it.name}}
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+    {{??}}
+    <div class="tool-head">
+        <a class="back"><span class="iconfont icon-fanhui"></span></a>
+        <h2>实用工具-{{=it.name}}</h2>
+    </div>
+    <div class="za-container">
+        <div class="tool-detail">
+            <div class="row">
+                {{? it.des }}
+                <div class="col-xs-4 text-right">
+                    工具描述
+                </div>
+                <div class="col-xs-8">
+                    {{=it.des}}
+                </div>
+                {{?}}
+                {{? it.ntended_for }}
+                <div class="col-xs-4 text-right">
+                    适用人群
+                </div>
+                <div class="col-xs-8">
+                    {{=it.ntended_for}}
+                </div>
+                {{?}}
+                {{? it.using_method }}
+                <div class="col-xs-4 text-right">
+                    使用方法
+                </div>
+                <div class="col-xs-8">
+                    {{=it.using_method}}
+                </div>
+                {{?}}
+                {{? it.important_hints }}
+                <div class="col-xs-4 text-right">
+                    重要提示
+                </div>
+                <div class="col-xs-8">
+                    {{=it.important_hints}}
+                </div>
+                {{?}}
+            </div>
+            <div class="alert-out alert-out-info">
+                {{ for (key in it.data) { }}
+                <a href="{{=key}}">入口地址</a>&nbsp;
+                {{? it.data[key] != 0}}
+                密码：{{=it.data[key]}}
+                {{?}}
+                <br>
+                {{ } }}
+            </div>
+        </div>
+
+    </div>
+    {{ } }}
+</div>

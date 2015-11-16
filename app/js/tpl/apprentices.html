@@ -1,0 +1,69 @@
+<div class="za-container">
+    {{? !it.data}}
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    {{??}}
+        <div class="alert-out alert-out-info"><strong>我收的徒弟</strong></div>
+        <div class="panel-list">
+            {{ for (var key in it.data) { }}
+            <div class="row">
+                <div class="col-xs-8">
+                    {{=it.data[key].nickname}}
+                </div>
+                <div class="col-xs-4 text-right">
+                    <span class="text-danger">
+                        {{? it.data[key].status == 1}}
+                        <span class="text-success">已经支付</span>
+                        {{?? }}
+
+                        <span class="text-danger">未支付</span>
+                        {{}}}
+                    </span>
+                </div>
+            </div>
+            {{ } }}
+            {{? it.total_count > it.list_rows }}
+            <div class="text-center">
+                <ul class="za-page">
+                    <li>
+                        <a
+                                {{? it.current_page == 1}}
+                                href="javascript:;"
+                                class="disabled"
+                                {{??}}
+                                href="#apprentices/{{=(parseInt(it.current_page) - 1)}}"
+                                {{?}} aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                    </li>
+                    {{var num = (it.total_pages < 5) ? it.total_pages : 5  ; }}
+                    {{ for (var i=0; i < num; i++ ) { }}
+                    {{? (parseInt(it.current_page) + i) <= it.total_pages}}
+                    <li>
+                        <a class="{{? it.current_page == (parseInt(it.current_page) + i) }}active{{ } }}" href="#apprentices/{{=(parseInt(it.current_page) + i)}}">
+                            {{=(parseInt(it.current_page) + i)}}
+                        </a>
+                    </li>
+                    {{?}}
+                    {{ } }}
+                    <li>
+                        <a
+                                {{? it.total_pages == it.current_page}}
+                                href="javascript:;"
+                                class="disabled"
+                                {{??}}
+                                href="#apprentices/{{=(parseInt(it.current_page) + 1)}}"
+                                {{?}}
+                                aria-label="Next">
+                            <span aria-hidden="true">»</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {{ } }}
+        </div>
+    {{ } }}
+</div>

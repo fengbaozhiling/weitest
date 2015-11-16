@@ -1,0 +1,66 @@
+.za-media {
+  // Proper spacing between instances of .za-media
+  margin-top: 1rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.za-media,
+.za-media-body {
+  zoom: 1;
+  overflow: hidden;
+}
+
+.za-media-body {
+  width: 10000px;
+}
+
+.za-media-object {
+  display: block;
+
+  // Fix collapse in webkit from max-width: 100% and display: table-cell.
+  &.img-thumbnail {
+    max-width: none;
+  }
+}
+
+.za-media-right,
+.za-media > .pull-right {
+  padding-left: 10px;
+}
+
+.za-media-left,
+.za-media > .pull-left {
+  padding-right: 10px;
+}
+
+.za-media-left,
+.za-media-right,
+.za-media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.za-media-middle {
+  vertical-align: middle;
+}
+
+.za-media-bottom {
+  vertical-align: bottom;
+}
+
+// Reset margins on headings for tighter default spacing
+.za-media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+// Media list variation
+//
+// Undo default ul/ol styles
+.za-media-list {
+  padding-left: 0;
+  list-style: none;
+}

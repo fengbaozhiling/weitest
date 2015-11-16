@@ -1,0 +1,37 @@
+.footer-bar {
+  z-index: @zindex-navbar-fixed;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:darken(@brand-info,10%) ;
+  > a {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    position: relative;
+    color: #fff;
+    &:after {
+      content: " ";
+      display: block;
+      height: 3rem;
+      position: absolute;
+      width: 1px;
+      background: #dfdfdf;
+      top: 1px;
+      opacity: 0.5;
+      right: 0;
+    }
+  }
+  > a.on {
+    background: @brand-info;
+  }
+  >a:last-child {
+    &:after {
+      display: none;
+    }
+  }
+}

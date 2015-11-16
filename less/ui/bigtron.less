@@ -1,0 +1,52 @@
+//
+// bigtron
+// --------------------------------------------------
+
+
+.za-bigtron {
+  padding-top:    @bigtron-padding;
+  padding-bottom: @bigtron-padding;
+  margin-bottom: @bigtron-padding;
+  color: @bigtron-color;
+  background-color: @bigtron-bg;
+
+  h1,
+  .h1 {
+    color: @bigtron-heading-color;
+  }
+
+  p {
+    margin-bottom: (@bigtron-padding / 2);
+    font-size: @bigtron-font-size;
+    font-weight: 200;
+  }
+
+  > hr {
+    border-top-color: darken(@bigtron-bg, 10%);
+  }
+
+  .container &,
+  .container-fluid & {
+    border-radius: @border-radius-large; // Only round corners at higher resolutions if contained in a container
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: @screen-sm-min) {
+    padding-top:    (@bigtron-padding * 1.6);
+    padding-bottom: (@bigtron-padding * 1.6);
+
+    .container &,
+    .container-fluid & {
+      padding-left:  (@bigtron-padding * 2);
+      padding-right: (@bigtron-padding * 2);
+    }
+
+    h1,
+    .h1 {
+      font-size: @bigtron-heading-font-size;
+    }
+  }
+}

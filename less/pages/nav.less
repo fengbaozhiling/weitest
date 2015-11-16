@@ -1,0 +1,42 @@
+.za-nav {
+  &:extend(.clearfix all);
+  height: 3rem;
+  border-bottom: 1px solid #dfdfdf;
+  position: relative;
+  z-index: 10;
+  > a {
+    display: inline-block;
+    width: 33.33333%;
+    float: left;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    position: relative;
+    color: #666;
+    font-size: 1.4rem;
+    background: -ms-linear-gradient(top, #fff, #dfdfdf); /* IE 10 */
+    background: -moz-linear-gradient(top, #fff, #dfdfdf); /*火狐*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#dfdfdf)); /*谷歌*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#dfdfdf)); /* Safari 4-5, Chrome 1-9*/
+    background: -webkit-linear-gradient(top, #fff, #dfdfdf); /*Safari5.1 Chrome 10+*/
+    &.on {
+      font-weight: bold;
+      -webkit-transition-property: background-color;
+      -webkit-transition-duration: 0.3s;
+      -webkit-transition-timing-function: ease;
+      background: @brand-danger;
+      color: #fff;
+    }
+    &:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      width: 1px;
+      background: #dfdfdf;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+}
