@@ -1,23 +1,16 @@
-'use strict';
+var doT = require('../../lib/dot/dot');
+var tpl = require('html!../tpl/index.html');
 
-define([
-    'doT',
-    'text!tpl/index.html'
-], function ( doT, tpl) {
+module.exports = Backbone.View.extend({
+    el: $('#viewMain'),
+    template: doT.template(tpl),
+    tagName: 'div',
+    initialize: function () {
+    },
+    render: function () {
+        var _this = this;
+        _this.$el.addClass('block').html(_this.template());
 
-    var userView = Backbone.View.extend({
-        el: $('#viewMain'),
-        template: doT.template(tpl),
-        tagName: 'div',
-        initialize: function () {
-        },
-        render: function () {
-            var _this = this;
-            _this.$el.addClass('block').html(_this.template());
-
-            return this;
-        }
-    });
-
-    return userView;
+        return this;
+    }
 });

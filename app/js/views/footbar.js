@@ -1,20 +1,15 @@
-'use strict';
+var doT = require('../../lib/dot/dot');
+var footBarCrent = require('../tool/foot_bar_crent');
+var tpl = require('html!../tpl/foot_bar.html');
 
-define([
-    'doT',
-    'tool/foot_bar_crent',
-    'text!tpl/foot_bar.html'
-], function ( doT, footBarCrent, tpl) {
-    var footerView = Backbone.View.extend({
-        template: doT.template(tpl),
-        tagName: 'div',
-        initialize: function () {
-            this.footBarCrent = footBarCrent;
-        },
-        render: function () {
+module.exports = Backbone.View.extend({
+    template: doT.template(tpl),
+    tagName: 'div',
+    initialize: function () {
+        this.footBarCrent = footBarCrent;
+    },
+    render: function () {
 
-            return this;
-        }
-    });
-    return footerView;
+        return this;
+    }
 });

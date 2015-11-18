@@ -1,14 +1,11 @@
-define(function (require) {
-    var fastClick = require('fastClick');
+var fastClick = require('../lib/fastclick/fastclick');
 
-    fastClick.attach(document.body);
+fastClick.attach(document.body);
 
-    /*
-     * 引入路由
-     * */
-    var Baofen = require('rout');
-    var baofen = new Baofen();
+/*
+ * 引入路由
+ * */
+var Baofen = require('./rout');
+var baofen = new Baofen();
 
-    Backbone.history.start();
-});
-
+Backbone.history.start();

@@ -21,43 +21,43 @@
         </div>
         {{ } }}
     </div>
-        {{? it.total_count > it.list_rows }}
-        <div class="text-center">
-            <ul class="za-page">
-                <li>
-                    <a   {{? it.current_page == 1}}
-                            href="javascript:;"
-                            class="disabled"
-                            {{??}}
-                            href="#reward/{{=(parseInt(it.current_page) - 1)}}"
-                            {{?}} aria-label="Previous">
-                        <span aria-hidden="true">«</span>
-                    </a>
-                </li>
-                {{var num = (it.total_pages < 5) ? it.total_pages : 5  ; }}
-                {{ for (var i=0; i < num; i++ ) { }}
-                {{? (parseInt(it.current_page) + i) <= it.total_pages}}
-                <li>
-                    <a class="{{? it.current_page == (parseInt(it.current_page) + i) }}active{{ } }}" href="#reward/{{=(parseInt(it.current_page) + i)}}">
-                        {{=(parseInt(it.current_page) + i)}}
-                    </a>
-                </li>
-                {{?}}
-                {{ } }}
-                <li>
-                    <a {{? it.total_pages == it.current_page}}
-                            href="javascript:;"
-                            class="disabled"
-                            {{??}}
-                            href="#reward/{{=(parseInt(it.current_page) + 1)}}"
-                            {{?}}
-                            aria-label="Next">
-                        <span aria-hidden="true">»</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        {{ } }}
+    {{? it.total_count > it.list_rows }}
+    <div class="text-center">
+        <ul class="za-page">
+            <li>
+                <a   {{? it.current_page == 1}}
+                     href="javascript:;"
+                     class="disabled"
+                     {{??}}
+                     href="#reward/{{=(parseInt(it.current_page) - 1)}}"
+                     {{?}} aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                </a>
+            </li>
+            {{var num = (it.total_pages < 5) ? it.total_pages : 5  ; }}
+            {{ for (var i=0; i < num; i++ ) { }}
+            {{? (parseInt(it.current_page) + i) <= it.total_pages}}
+            <li>
+                <a class="{{? it.current_page == (parseInt(it.current_page) + i) }}active{{ } }}" href="#reward/{{=(parseInt(it.current_page) + i)}}">
+                    {{=(parseInt(it.current_page) + i)}}
+                </a>
+            </li>
+            {{?}}
+            {{ } }}
+            <li>
+                <a {{? it.total_pages == it.current_page}}
+                   href="javascript:;"
+                   class="disabled"
+                   {{??}}
+                   href="#reward/{{=(parseInt(it.current_page) + 1)}}"
+                   {{?}}
+                   aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    {{ } }}
 
     {{?? }}
     <div class="za-alert za-alert-warning">暂无记录</div>

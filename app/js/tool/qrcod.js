@@ -1,9 +1,6 @@
-define(function (require) {
-    var qrcode = require('qrcode');
-    var NewCode = function (elemt, option) {
-        this.init = function(){
-            $(elemt).qrcode(option);
-        }
+var qrcode = require('../../lib/qrcode/jquery.qrcode');
+module.exports = function (elemt, option) {
+    this.init = function(){
+        $(elemt).qrcode(option);
     }
-    return NewCode;
-})
+}

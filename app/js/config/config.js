@@ -1,6 +1,4 @@
-define(function () {
-    return {
-        server: false,
-        version: '1.0.0'
-    }
-});
+module.exports =  {
+    server: false,
+    version: '1.0.0'
+}
