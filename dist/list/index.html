@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta content="telephone=no" name="format-detection"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="stylesheet" href="css/list.css"><title>财神道</title></head><body><section class="view-box" id="listView"><div id="listCont"></div></section><section class="view-box" id="detailView"></section><!--依赖核心库，改成CDN地址 start--><script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script><script src="http://apps.bdimg.com/libs/underscore.js/1.7.0/underscore-min.js"></script><script src="http://apps.bdimg.com/libs/backbone.js/1.1.2/backbone-min.js"></script><script src="http://apps.bdimg.com/libs/jquery.infinitescroll.js/2.0.2/jquery.infinitescroll.min.js"></script><!--依赖核心库，改成CDN地址 end--><!--微信API start--><script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script><script>wx.config({
+        debug: false,
+        appId: '{$signPackage["appId"]}',
+        timestamp: '{$signPackage["timestamp"]}',
+        nonceStr: '{$signPackage["nonceStr"]}',
+        signature: '{$signPackage["signature"]}',
+        jsApiList: [
+            'checkJsApi',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ',
+            'onMenuShareWeibo',
+            'chooseImage',
+            'previewImage',
+            'uploadImage',
+            'downloadImage'
+        ]
+    });
+    var globConfig = {
+        host: 'http://192.168.1.6/',
+        baseUrl: './js',
+        imageUrl:'./images',
+        uid:2323
+
+    };
+    var sourceUrl = 'http://zuan.dg0533.com';
+    var demoConfig = {
+        host: 'http://192.168.1.26:3000/',
+        baseUrl: './js',
+        imageUrl:'./images',
+        uid:2323
+    };
+    var isService = false;</script><!--微信API end--><script src="js/build.js"></script></body></html>

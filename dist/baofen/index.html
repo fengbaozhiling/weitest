@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta content="telephone=no" name="format-detection"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="stylesheet" href="css/zuan.css"><title>爆粉大师</title></head><body><!--<section class="scroll-wrap" id="indexView">
+
+</section>
+<section class="scroll-wrap" id="payView">
+
+</section>
+<section class="scroll-wrap" id="welcomeView">
+
+</section>--><section class="scroll-wrap" id="rewardView"><div id="headView"></div><div id="recordView"></div></section><section class="scroll-wrap" id="listView"><div id="queueView"></div><div id="listHornView"></div><div id="listHornFloat"></div><div id="listContView"></div><div id="energyView"></div><div id="menuView"></div></section><section class="scroll-wrap" id="viewMain"></section><section class="scroll-wrap" id="withdrawView"></section><section class="scroll-wrap" id="withdrawListView">暂无数据</section><section class="scroll-wrap" id="rankView"></section><section class="scroll-wrap" id="publicView"></section><section class="scroll-wrap" id="placardView"><div class="bannerView"></div><div class="rankView"></div></section><section class="scroll-wrap" id="placardWelcomeView"></section><!--依赖核心库，改成CDN地址 start--><script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script><script src="http://apps.bdimg.com/libs/underscore.js/1.7.0/underscore-min.js"></script><script src="http://apps.bdimg.com/libs/backbone.js/1.1.2/backbone-min.js"></script><script src="../lib/socket.io/socket.io-1.3.7.js"></script><!--依赖核心库，改成CDN地址 end--><!--微信API start--><script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script><script>wx.config({
+        debug: false,
+        appId: '{$signPackage["appId"]}',
+        timestamp: '{$signPackage["timestamp"]}',
+        nonceStr: '{$signPackage["nonceStr"]}',
+        signature: '{$signPackage["signature"]}',
+        jsApiList: [
+            'checkJsApi',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ',
+            'onMenuShareWeibo',
+            'chooseImage',
+            'previewImage',
+            'uploadImage',
+            'downloadImage'
+        ]
+    });
+    var globConfig = {
+        host: 'http://192.168.1.6/',
+        baseUrl: './js',
+        imageUrl:'./images',
+        uid:2323
+
+    };
+    var demoConfig = {
+        host: 'http://192.168.1.26:3000/',
+        baseUrl: './js',
+        imageUrl:'./images',
+        uid:2323
+    }</script><!--微信API end--><script src="js/build.js"></script></body></html>

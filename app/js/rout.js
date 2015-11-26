@@ -43,6 +43,7 @@ module.exports = Backbone.Router.extend({
         'qcode_upload': 'qcodeUpload',
         'chat': 'chat',
         'withdraw': 'withdraw',
+        'withdraw/:type': 'withdraw',
         'withdraw_list': 'withdraw_list',
         'withdraw_list/:page': 'withdraw_list',
         'rank': 'rank',
@@ -92,7 +93,6 @@ module.exports = Backbone.Router.extend({
     },
     placard:function(group){
         var group = group ? group : 'myteam';
-        this.cached.placardView.render();
         this.cached.placardView.placardModel.fetch({data:{group:group}});
         this.cached.placardView.cashModel.fetch();
         this.cached.placardView.$el.addClass('block').siblings().removeClass('block');
@@ -121,8 +121,9 @@ module.exports = Backbone.Router.extend({
         this.cached.welcomeView.render();
         this.cached.welcomeView.$el.addClass('block').siblings().removeClass('block');
     },
-    withdraw: function () {
-        this.cached.withdraw.cashModel.fetch()
+    withdraw: function (type) {
+        var type = type ? type : 2;
+        this.cached.withdraw.cashModel.fetch({data: {type: type}});
         this.cached.withdraw.render();
         this.cached.withdraw.$el.addClass('block').siblings().removeClass('block');
 

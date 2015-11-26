@@ -1,0 +1,79 @@
+<div class="list-page text-center">
+    <ul class="za-page">
+        <li>
+            <a   {{? it.current_page == 0}}
+                 href="javascript:;"
+                 class="disabled"
+                 {{??}}
+                 href="#{{=it.page_url}}/{{=(parseInt(it.current_page) - 1)}}"
+                 {{?}} aria-label="Previous">
+                <span aria-hidden="true">«</span>
+            </a>
+        </li>
+        {{var num = (it.total_pages < 5) ? it.total_pages : 5  ; }}
+
+        {{var endPage = ( parseInt(it.total_pages) >= parseInt(it.current_page)+ 1  ? parseInt(it.current_page)+ 1 :  parseInt(it.total_pages) ) ;}}
+
+        {{? it.current_page !=0 }}
+        <li>
+            <a class="{{? it.current_page == 0 }}active{{ } }}" href="#{{=it.page_url}}/0">
+                1
+            </a>
+        </li>
+        {{}}}
+        {{? it.current_page > 5 }}
+        <li>
+            <a>
+                ...
+            </a>
+        </li>
+        {{}}}
+
+        {{ for (var i=parseInt(it.current_page)-1; i <= endPage; i++ ) { }}
+            {{? i>= 0}}
+                {{? i == it.current_page}}
+                <li>
+                    <a class="{{? it.current_page == (parseInt(it.current_page)) }}active{{ } }}" href="#{{=it.page_url}}/{{=parseInt(it.current_page)}}">
+                        {{=parseInt(it.current_page)}}
+                    </a>
+                </li>
+                {{??}}
+
+                {{? i != 0 && i != it.total_pages }}
+                <li>
+
+                    <a href="#{{=it.page_url}}/{{=i-1}}">
+                        {{=i}}
+                    </a>
+                </li>
+                {{}}}
+            {{?}}
+        {{}}}
+        {{ } }}
+        {{? parseInt(it.current_page) + 2 < parseInt(it.total_pages) }}
+        <li>
+            <a>
+                ...
+            </a>
+        </li>
+        {{}}}
+        {{? it.current_page != parseInt(it.total_pages) }}
+        <li>
+            <a class="{{? it.current_page == parseInt(it.total_pages) }}active{{ } }}" href="#{{=it.page_url}}/{{=parseInt(it.total_pages)}}">
+                {{=parseInt(it.total_pages)+1}}
+            </a>
+        </li>
+        {{}}}
+        <li>
+            <a {{? it.total_pages == it.current_page}}
+               href="javascript:;"
+               class="disabled"
+               {{??}}
+               href="#{{=it.page_url}}/{{=(parseInt(it.current_page) + 1)}}"
+               {{?}}
+               aria-label="Next">
+                <span aria-hidden="true">»</span>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,25 @@
+{{? !it.data}}
+<div class="sk-three-bounce">
+    <div class="sk-child sk-bounce1"></div>
+    <div class="sk-child sk-bounce2"></div>
+    <div class="sk-child sk-bounce3"></div>
+</div>
+{{?? }}
+<div class="za-container">
+    <h3>推广记录</h3>
+    {{? it.data.length > 0}}
+    <div class="panel-list">
+        {{ for (var key in it.data) { }}
+        <div class="row">
+            <div class="col-xs-8">
+                <b>{{=it.data[key].nickname}}</b>
+            </div>
+            <div class="col-xs-4 text-right">
+                <span class="text-danger">￥&nbsp;{{=it.data[key].money}}</span>
+            </div>
+        </div>
+        {{ } }}
+    </div>
+    {{}}}
+</div>
+{{ } }}

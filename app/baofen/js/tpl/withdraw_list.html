@@ -1,0 +1,44 @@
+{{? !it}}
+<div class="sk-three-bounce">
+    <div class="sk-child sk-bounce1"></div>
+    <div class="sk-child sk-bounce2"></div>
+    <div class="sk-child sk-bounce3"></div>
+</div>
+{{??}}
+
+{{? it.data.length != 0}}
+    {{ for (var key in it.data) { }}
+    <div class="za-media">
+        <div class="za-media-left">
+            {{?it.data[key].type == parseInt(1)}}
+            <b>积分提现</b>
+            {{??it.data[key].type == parseInt(2)}}
+            <b>现金</b>
+            {{?}}
+        </div>
+        <div class="za-media-body">
+            <span class="text-danger">
+                ￥{{=it.data[key].cash}}
+            </span>
+        </div>
+        <div class="za-media-right">
+            {{?it.data[key].status == 1}}
+            <span class="text-success">提现成功</span>
+            {{??it.data[key].status == 2}}
+            <span class="text-danger">
+                提现失败
+                <i data-msg="{{=it.data[key].return_msg}}" class="iconfont icon-wenhao01"></i>
+            </span>
+            {{?}}
+            <br>
+            {{=it.data[key].time}}
+        </div>
+    </div>
+    {{ } }}
+{{??}}
+<div class="sk-three-bounce">
+    暂无数据
+</div>
+{{?}}
+
+{{ } }}

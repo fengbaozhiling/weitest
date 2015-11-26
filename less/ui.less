@@ -1,0 +1,107 @@
+@import url('ui/variables.less');
+@import url('ui/normalize.less');
+@import url('ui/minixs.less');
+
+@import "ui/scaffolding.less";
+@import url('ui/animate.less');
+@import url('ui/icon.less');
+@import url('ui/alerts.less');
+@import url('ui/close.less');
+@import url('ui/list-group.less');
+@import url('ui/tips-biu.less');
+@import url('ui/button.less');
+@import url('ui/forms.less');
+@import url('ui/progress-bars.less');
+@import url('ui/input-groups.less');
+
+@import url('ui/grid.less');
+@import url('ui/type.less');
+@import url('ui/media.list.less');
+@import url('ui/badge.less');
+@import url('ui/bigtron.less');
+
+@import url('ui/navs.less');
+@import url('ui/navbar.less');
+
+//Components
+@import url('ui/media.less');
+@import url('ui/next_page.less');
+
+//Components / JavaScript
+@import url('ui/dialog.less');
+
+
+
+html {
+  font-size:@font-size-base*1.2;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@media (device-width:375px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone 6 */
+  html {
+    font-size:1.4*@font-size-base;
+  }
+}
+@media (device-width:414px) and (-webkit-min-device-pixel-ratio:3.0){/* 兼容iphone6 plus */
+  html {
+    font-size:1.4*@font-size-base;
+  }
+}
+
+
+
+body {
+  font-family: "微软雅黑","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: @font-size-normal;
+  line-height: @line-height-base;
+  color: @gray-darker;
+  background-color: @body-bg!important;
+}
+
+
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: #607fa6; text-decoration: none;
+}
+a:hover,a:active {
+  text-decoration: none;
+}
+input:active,
+textarea:active,
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+.za-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}

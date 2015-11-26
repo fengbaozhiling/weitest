@@ -1,0 +1,33 @@
+{{? !it}}
+<div class="sk-three-bounce">
+    <div class="sk-child sk-bounce1"></div>
+    <div class="sk-child sk-bounce2"></div>
+    <div class="sk-child sk-bounce3"></div>
+</div>
+{{??}}
+<header>
+    <a class="back" href="#reward"><span class="iconfont icon-iconfont12"></span></a>
+    <h1>排行榜</h1>
+</header>
+<nav class="za-nav">
+    <a href="#/rank/all"><span>总排行</span></a>
+    <a href="#/rank/week"><span>周排行</span></a>
+    <a href="#/rank/month"><span>月排行</span></a>
+</nav>
+    {{ for (var key in it.data) { }}
+    <div class="za-media">
+        <div class="za-media-left">
+            <img class="media-object"
+                 src="{{=it.data[key].headimgurl}}">
+        </div>
+        <div class="za-media-body">
+            <h4 class="
+            {{? key <= 2 }} text-danger {{?}}
+            ">{{=it.data[key].nickname}}</h4>
+        </div>
+        <div class="za-media-right">
+            <span class="text-info">{{=it.data[key].total}}</span>
+        </div>
+    </div>
+    {{ } }}
+{{ } }}

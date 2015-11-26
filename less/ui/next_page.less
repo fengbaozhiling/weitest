@@ -13,7 +13,7 @@
     > span {
       position: relative;
       float: left; // Collapse white-space
-      padding: @padding-base-vertical @padding-base-horizontal;
+      padding: .3rem .5rem;
       line-height: @line-height-base;
       text-decoration: none;
       color: @za-page-color;
@@ -47,8 +47,7 @@
     }
   }
 
-  > .active > a,
-  > .active > span {
+ .active {
     &,
     &:hover,
     &:focus {
@@ -60,7 +59,7 @@
     }
   }
 
-  > .disabled {
+  .disabled {
     > span,
     > span:hover,
     > span:focus,

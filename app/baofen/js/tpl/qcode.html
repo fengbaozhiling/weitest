@@ -1,0 +1,24 @@
+<div class="scroll">
+    {{? !it.path}}
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+    {{??}}
+    <div class="za-container" style="padding-bottom: 4rem">
+        <h3>第一步</h3>
+        <p>长按下方图片，在弹出菜单中选择“保存图片”将图片保存到您手机上</p>
+        <div class="alert-out alert-out-info">
+            <img class="img-responsive" src="{{=it.path}}">
+        </div>
+        <p><strong>此二维码有效期至：</strong></p>
+        <p class="text-success">{{=it.time}};</p>
+        <p class="text-success">过期重新到本页面生成即可</p>
+        <h3>第二步</h3>
+        <p>将图片通过朋友圈或群发（微信工具栏里有群发功能，一次可以发150人）的方式发送给好友，好友通过此图片里二维码关注并付款后您就可以收徒弟并得到相应的佣金啦！</p>
+        <h3>第三步</h3>
+        <p>点击底部菜单“佣金制度”可查看佣金管理办法，所有的佣金都是采取即时汇款的方式汇到您的微信钱包的哦！</p>
+    </div>
+    {{?}}
+</div>

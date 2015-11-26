@@ -13,13 +13,16 @@
         <div class="arrow"><i class="iconfont icon-qianjin"></i></div>
     </div>
     <div class="form-tip">
-        {{? it.type===1}}
-        当前可提现积分<span class="text-danger">{{= it.integral}}</span>（100积分=1元）
+        {{? it.type==1}}
+        当前可提现积分<span class="num text-danger">{{=it.num}}</span>（100积分=1元）
+        {{?? it.type==2}}
+        当前可提现金额<span class="num text-danger">{{=it.num}}</span>元
         {{?}}
     </div>
     <div class="input-group">
         <span class="input-group-addon">金额</span>
-        <input name="cash" class="form-control" placeholder="请填写金额（元）" type="num" value=""/>
+        <input name="cash" class="form-control" placeholder="请填写金额（元）" type="num" />
+        <input type="hidden" name="type" value="{{= it.type}}">
     </div>
     <div class="form-tip">
         最低限度1元，每日限额200元

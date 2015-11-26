@@ -57,6 +57,7 @@
   "repository": "fengbaozhiling/weitest",
   "devDependencies": {
     "gulp-imagemin": "^2.4.0",
-    "gulp-rjs": "^0.1.0"
+    "gulp-rjs": "^0.1.0",
+    "opn": "^3.0.3"
   }
 }

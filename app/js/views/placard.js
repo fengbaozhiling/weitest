@@ -1,11 +1,10 @@
 var doT = require('../../lib/dot/dot');
 var dialog = require('../component/dialog/dialog');
-var PlacardRank = require('../models/placard_cash');
-var Cash = require('../models/placard_rank');
+var PlacardRank = require('../models/placard_rank');
+var Cash = require('../models/placard_cash');
 var footBarCrent = require('../tool/foot_bar_crent');
 var tpl = require('html!../tpl/placard.html');
 var tplRank = require('html!../tpl/placard_rank.html');
-
 
 
 module.exports = Backbone.View.extend({
@@ -16,7 +15,7 @@ module.exports = Backbone.View.extend({
     events:{
         'click .icon-wenhao': function() {
             var html = '<div class="alert-out alert-out-info">' +
-                '<span class="text-danger">若可提现金额小于提现额度不能提现</span><br>1、必须满足积分超过100分，即最低1元方可提现；<br>2、推广的好友关注公众号即可获得一个积分红包；<br>3、可提现结算周期为24小时，即指第二次提现申请与第一次提现申请需间隔24小时；<br>4、您可自主提现，提现金额转到微信零钱；<br>5、爆粉大师拥有本活动最终解释权' +
+                '<span class="text-danger">若可提现金额小于提现额度不能提现</span><br>1、必须满足积分超过100分，即最低1元方可提现；<br>2、推广的团员输入接头暗号后即可随机获得一个5-50积分；<br>3、可提现结算周期为24小时，即指第二次提现申请与第一次提现申请需间隔24小时；<br>4、您可自主提现，提现金额转到微信零钱；<br>5、财神道拥有本活动最终解释权' +
                 '</div>';
             var d = new dialog ({
                 title:'积分说明',

@@ -1,0 +1,43 @@
+{{? !it}}
+<div class="sk-three-bounce">
+    <div class="sk-child sk-bounce1"></div>
+    <div class="sk-child sk-bounce2"></div>
+    <div class="sk-child sk-bounce3"></div>
+</div>
+{{??}}
+<nav class="za-nav">
+    <a href="#/placard/myteam"><span>我的军团</span></a>
+    <a href="#/placard/all"><span>世界排名</span></a>
+</nav>
+{{ for (var key in it.data) { }}
+<div class="za-media rank-list">
+    <div class="za-media-left">
+        <img class="media-object" src="{{=it.data[key].headimgurl}}">
+    </div>
+    <div class="za-media-body {{? it.group == 'myteam'}}{{? it.data[key].status == 1}}settled{{??}}not-settled{{?}}{{?}}" >
+        <h4>{{=it.data[key].nickname}} </h4>
+        <p class="time-info">{{? it.group == 'myteam'}}入团时间{{??}}建团时间{{?}}：{{=it.data[key].join_time}}</p>
+    </div>
+    <div class="za-media-right">
+        <div class="text-right">
+            {{? it.group == 'myteam'}}贡献{{??}}总积分{{?}}<br>
+            <span class="text-danger">{{=it.data[key].integral}}</span>
+        </div>
+    </div>
+</div>
+{{ } }}
+{{? it.group == 'myteam'}}
+<div class="my-row">
+    <b>军团累计积分<i data-msg="军团累计积分=已结算积分+未结算积分" class="iconfont icon-wenhao01"></i>:</b>
+    <span class="text-danger">{{=it.all_integral}}</span>
+</div>
+<div class="my-row">
+    <b>已结算积分<i data-msg="所有入团满{{=it.settle_cycle}}天的团员贡献总额" class="iconfont icon-wenhao01"></i>:</b>
+    <span class="text-danger">{{=it.settled}}</span>
+</div>
+<div class="my-row">
+    <b>未结算积分<i data-msg="所有入团未满{{=it.settle_cycle}}天的团员贡献的积分" class="iconfont icon-wenhao01"></i>:</b>
+    <span class="text-danger">{{=it.not_settled}}</span>
+</div>
+{{?}}
+{{ } }}

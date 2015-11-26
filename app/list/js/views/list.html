@@ -1,0 +1,21 @@
+<div data-page="{{=it.current_page}}" id="list_{{=it.current_page}}">
+    {{ for (var key in it.data) { }}
+    <a href="#detail/{{=it.data[key].id}}">
+        <div class="za-media">
+            <div class="za-media-left">
+                <img class="media-object" src="{{=sourceUrl}}{{=it.data[key].cover_img}}">
+            </div>
+            <div class="za-media-body">
+                <h5>{{=it.current_page}}{{=it.data[key].title}}</h5>
+                <div>
+                <span class="pull-right">
+                分享：{{=it.data[key].share}} &nbsp;
+                阅读：{{=it.data[key].view}}
+            </span>
+                    <span class="text-danger">￥{{=it.data[key].price}}</span>
+                </div>
+            </div>
+        </div>
+    </a>
+    {{ } }}
+</div>

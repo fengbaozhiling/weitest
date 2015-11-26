@@ -1,0 +1,113 @@
+@import url('ui.less');
+.view-box {
+  display: none;
+}
+.list-show {
+  display: block;
+}
+.list-hide{
+  display: none;
+}
+#listView {
+  position: absolute;
+  z-index: 50;
+  overflow-y:auto; overflow-x:hidden;
+  height: 100%;
+  width: 100%;
+
+  .back-top {
+    position:fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    display: block;
+    background: rgba(255,255,255, 0.5);
+    border-radius: 10rem;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+  a {
+    color: #333;
+  }
+  .za-alert {
+    border-radius: 0;
+    margin-bottom: auto;
+  }
+  .za-media {
+    margin-top: auto;
+    border-bottom: 1px dotted #dfdfdf;
+    padding:1rem 0.5rem;
+
+    background: -ms-linear-gradient(top, #fff, #efefef); /* IE 10 */
+    background: -moz-linear-gradient(top, #fff, #efefef); /*火狐*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#efefef)); /*谷歌*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#efefef)); /* Safari 4-5, Chrome 1-9*/
+    background: -webkit-linear-gradient(top, #fff, #efefef); /*Safari5.1 Chrome 10+*/
+    &:active,&:hover{
+      background: #fff;
+      text-decoration: none;
+    }
+  }
+  h5 {
+    margin-top: auto;
+  }
+  .media-object {
+    width: 6rem;
+  }
+  .za-media-body {
+    .pull-right {
+      color: #999;
+      font-size: 1rem;
+    }
+  }
+  #list-page {
+    position: fixed;
+    top: 6rem;
+    right: 0;
+    border-radius: 0.5rem;
+    background: rgba(255,255,255,0.7);
+    text-align: center;
+    .za-page {
+      margin: auto;
+      ul {
+        width: 100%;
+      }
+      > li {
+        display: block;
+        width: 100%;
+        text-align: center;
+        > a {
+          display: block;
+          width: 100%;
+          background: none;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+#detailView {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  top: 0;
+  background: #fff;
+  overflow: auto;
+
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  .detail {
+    overflow: hidden;
+    img {
+      &:extend(.img-responsive);
+    }
+
+  }
+  .detail-title {
+    font-size: 1.6rem;
+  }
+
+}

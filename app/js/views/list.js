@@ -15,7 +15,7 @@ var tpl = require('html!../tpl/list.html');
 var hornMessageTpl = require('html!../tpl/horn_message.html');
 
 module.exports =  Backbone.View.extend({
-    el: $('#listView'),
+    el: '#listView',
     template: doT.template(tpl),
     templateMessage: doT.template(hornMessageTpl),
     tagName: 'div',

@@ -6,8 +6,8 @@
 </div>
 {{??}}
 <nav class="za-nav">
-    <a href="#/placard/myteam"><span>我的团</span></a>
-    <a href="#/placard/all"><span>所有排名</span></a>
+    <a href="#/placard/myteam"><span>我的军团</span></a>
+    <a href="#/placard/all"><span>世界排名</span></a>
 </nav>
 {{ for (var key in it.data) { }}
 <div class="za-media">
@@ -16,16 +16,31 @@
              src="{{=it.data[key].headimgurl}}">
     </div>
     <div class="za-media-body">
-        <h4>{{=it.data[key].nickname}}</h4>
+        <h4>{{=it.data[key].nickname}} </h4>
 
-        <p class="time-info">入团时间：{{=it.data[key].join_time}}</p>
+        <p class="time-info">{{? it.group == 'myteam'}}入团时间{{??}}建团时间{{?}}：{{=it.data[key].join_time}}</p>
     </div>
     <div class="za-media-right">
-        <div class="text-right text-danger">
-            {{? it.group == 'myteam'}}贡献{{?}}
-        {{=it.data[key].integral}}
+        <div class="text-right">
+            {{? it.group == 'myteam'}}贡献{{??}}总积分{{?}}<br>
+            <span class="text-danger">{{=it.data[key].integral}}</span>
         </div>
     </div>
 </div>
 {{ } }}
+{{? it.group == 'myteam'}}
+<div class="za-media">
+    <div class="za-media-left">
+
+    </div>
+    <div class="za-media-body text-right">
+        <b>军团累计积分:</b>
+    </div>
+    <div class="za-media-right">
+        <div class="text-right text-danger">
+            {{=it.all_integral}}
+        </div>
+    </div>
+</div>
+{{?}}
 {{ } }}
